@@ -9,7 +9,7 @@ function NoteForm({ addNote }) {
     // not sure about user attachment. TODO: figure it out later, after note is displayed
     
     function _handleChange(evt) {
-        setNewNote({...newNote, [evt.target.name]: [evt.target.value] });
+        setNewNote({...newNote, [evt.target.name]: evt.target.value });
     }
 
     const _handleSubmit = (evt) => {

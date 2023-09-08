@@ -10,6 +10,7 @@ import './App.css';
 export default function App() {
     const [user, setUser] = useState(getUser());
     const [notes, setNotes] = useState([]);
+    // TODO: figure out what this state needs to be
     
     return (
         <main className="App">

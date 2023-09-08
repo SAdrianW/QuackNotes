@@ -1,5 +1,8 @@
-// import * as notesAPI from './notes-api';
+import * as notesAPI from './notes-api';
 
-export function createNote(note) {
-    alert(`${note.title}: ${note.text}`);
+export async function createNote(noteData) {
+    // alert(`${noteData.title}: ${noteData.text}`);
+    console.log(`${noteData.title}: ${noteData.text}`);
+    const NewNote = await notesAPI.createNote(noteData);
+    return NewNote;
 }
