@@ -2,7 +2,7 @@ const Note = require('../../models/Note');
 
 module.exports = {
     create,
-    // index,
+    index,
     // delete: deleteNote,
     // edit,
     // show
@@ -21,3 +21,13 @@ async function create(req, res) {
         res.status(400).json(err);
     }
 };
+
+async function index(req, res) {
+    try {
+        const notes = await Note.find({user: req.user._id});
+        res.json(notes);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+

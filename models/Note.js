@@ -14,7 +14,7 @@ const noteSchema = new Schema({
         required: true
     }
 }, {
-    timeseries: true
+    timestamps: true
 });
 
 module.exports = mongoose.model('Note', noteSchema);

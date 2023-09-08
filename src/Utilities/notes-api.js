@@ -5,3 +5,8 @@ export async function createNote(noteData) {
     console.log('before sendRequest');
     return sendRequest(BASE_URL, 'POST', noteData);
 }
+
+export async function getNotes() {
+    return sendRequest(BASE_URL);
+}
+
