@@ -8,14 +8,16 @@ export default function NavBar({ user, setUser }) {
     }
 
     return(
-        <nav>
-            <Link to="/orders">Order History</Link>
+        <nav className="flex-ctr-ctr">
+            <Link to="/notes">Quack Pond</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/notes/new">New Quack</Link>
             &nbsp; | &nbsp;
-            <span>Greetings {user.name}</span>
+            <h1>Greetings {user.name}, Welcome to Quack Notes!</h1>
             &nbsp; | &nbsp;&nbsp;
             <Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
     )
 };
+
+// todo: refactor into divs for flex spacing

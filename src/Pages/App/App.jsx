@@ -1,24 +1,26 @@
 import { useState  } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getUser } from "../../Utilities/users-service";
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import NewNotePage from '../NewNotePage/NewNotePage';
 import AuthPage from '../AuthPage/AuthPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import NoteHistoryPage from '../NoteHistoryPage/NoteHistoryPage';
 import NavBar from '../../Components/NavBar/NavBar';
 import './App.css';
 
 export default function App() {
     const [user, setUser] = useState(getUser());
+    const [notes, setNotes] = useState([]);
     
     return (
         <main className="App">
             { user ?
                 <>
                     <NavBar user={user} setUser={setUser} />
+                    <h2>Like Quick Notes... but they Quack</h2>
                     <Routes>
                         {/* Route components go in here */}
-                        <Route path="/orders/new" element={<NewOrderPage />} />
-                        <Route path="/orders" element={<OrderHistoryPage />} />
+                        <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} />} />
+                        <Route path="/notes" element={<NoteHistoryPage notes={notes} />} />
                     </Routes>
                 </> 
                 :
