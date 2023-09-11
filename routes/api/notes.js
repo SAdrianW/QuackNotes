@@ -11,7 +11,8 @@ router.post('/', ensureLoggedIn, notesController.create);
 router.get('/', ensureLoggedIn, notesController.index);
 // DELETE /api/notes/:id
 router.delete('/:id', ensureLoggedIn, notesController.delete);
-
+// PUT //notes/:id
+router.put('/:id', ensureLoggedIn, notesController.edit);
 
 
 module.exports = router;

@@ -1,0 +1,26 @@
+a {
+    color: rgb(190, 30, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-shadow: 0 0 2px rgb(40, 60, 225);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(66, 66, 66, 0.5);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+}
+
+.navBtn {
+    background-color: rgba(66, 66, 66, 0.75);
+    padding: 2vmin;
+}
+  

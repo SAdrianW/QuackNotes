@@ -4,7 +4,7 @@ module.exports = {
     create,
     index,
     delete: deleteNote,
-    // edit,
+    edit,
     // show
 }
 
@@ -39,6 +39,17 @@ async function deleteNote(req, res) {
         res.json(true);
     } catch (err) {
         console.log('delete error');
+        res.status(400).json(err);
+    }
+}
+
+async function edit(req, res) {
+    console.log(req.params.id + req.body)
+    try {
+        let note = await Note.findByIdAndUpdate(req.params.id, req.body);
+        note.save();
+    } catch (err) {
+        console.log('Edit error');
         res.status(400).json(err);
     }
 }

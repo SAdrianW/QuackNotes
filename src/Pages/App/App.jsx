@@ -9,6 +9,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NotePage from '../NotePage/NotePage';
 import NavBar from '../../Components/NavBar/NavBar';
 import LandingPage from '../LandingPage/LandingPage';
+import EditForm from '../../Components/EditForm/EditForm';
 import './App.css';
 
 export default function App() {
@@ -22,11 +23,13 @@ export default function App() {
             { user ?
                 <>
                     <NavBar user={user} setUser={setUser} />
-                    <LandingPage />
+                    
                     <Routes>
                         {/* Route components go in here */}
                         <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} />} />
                         <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} />} />
+                        <Route path='/' element={ <LandingPage /> } />
+                        <Route path='/notes/:id/edit' element={ <EditForm notes={notes} /> } />
                         
                     </Routes>
                 </> 

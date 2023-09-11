@@ -16,3 +16,9 @@ export async function deleteNote(id) {
     await notesAPI.deleteNote(id);
     return true;
 }
+
+export async function editNote(id) {
+    console.log(id);
+    await notesAPI.editNote(id);
+    return id;
+}
