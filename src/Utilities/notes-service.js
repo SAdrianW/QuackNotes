@@ -11,3 +11,8 @@ export async function getNotes() {
     const notes = await notesAPI.getNotes();
     return notes;
 }
+
+export async function deleteNote(id) {
+    await notesAPI.deleteNote(id);
+    return true;
+}

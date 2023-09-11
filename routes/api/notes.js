@@ -6,10 +6,11 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 // All path start with '/api/notes'
 
 // POST /api/notes
-router.post('/', notesController.create);
+router.post('/', ensureLoggedIn, notesController.create);
 // GET /api.notes
-router.get('/', notesController.index);
-
+router.get('/', ensureLoggedIn, notesController.index);
+// DELETE /api/notes/:id
+router.delete('/:id', ensureLoggedIn, notesController.delete);
 
 
 

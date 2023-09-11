@@ -10,3 +10,6 @@ export async function getNotes() {
     return sendRequest(BASE_URL);
 }
 
+export async function deleteNote(id) {
+    return sendRequest(`${ BASE_URL }/${ id }`, 'DELETE');
+}
