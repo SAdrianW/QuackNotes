@@ -30,6 +30,11 @@ const port = process.env.PORT || 3001;
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/notes', require('./routes/api/notes'));
+app.get('/api/duck', async function(req, res){
+    const data = await fetch(`https://random-d.uk/api/random?format=json`)
+    .then(response => response.json())
+    res.json(data)
+})
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

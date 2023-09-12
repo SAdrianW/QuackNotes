@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NoteForm({ addNote }) {
+export default function NoteForm({ addNote }) {
     const [newNote, setNewNote] = useState({
         title: '',
         text:''
@@ -50,5 +50,3 @@ function NoteForm({ addNote }) {
         </>
     )
 };
-
-export default NoteForm;

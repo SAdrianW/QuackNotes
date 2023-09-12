@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import * as notesServices from '../../Utilities/notes-service';
 
-function EditForm({ notes }) {
+export default function EditForm({ notes }) {
     let { id } = useParams();
     const note = notes.find((n) => id === n._id);
 
@@ -64,4 +64,3 @@ function EditForm({ notes }) {
     )
 };
 
-export default EditForm;
