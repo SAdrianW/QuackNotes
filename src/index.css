@@ -53,6 +53,11 @@ body {
     text-shadow: -1px -1px 0 var(--orange), 1px -1px 0 var(--orange), -1px 1px 0 var(--orange), 1px 1px 0 var(--orange);
 }
 
+.truncate {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
   
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;

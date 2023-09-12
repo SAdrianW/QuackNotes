@@ -1,8 +1,22 @@
+.note-pad-s {
+    background-image: url('../../../public/lily-pad.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 12vmin;
+    width: 80vmin;
+}
+
 .note-pad {
     background-image: url('../../../public/lily-pad.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 5vmin;
-    width: 80vmin;
+    padding: 12vmin;
+    width: 160vmin;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
 }

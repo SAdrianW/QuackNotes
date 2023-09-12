@@ -7,12 +7,12 @@ export default function EditForm({ notes }) {
     let { id } = useParams();
     const note = notes.find((n) => id === n._id);
 
-    console.log(id);
-    console.log(note);
+    // console.log(id);
+    // console.log(note);
 
     const [editedNote, setEditedNote] = useState( note );
     const navigate = useNavigate();
-    console.log(editedNote)
+    // console.log(editedNote)
 
     async function editNote(note) {
         const editedNote = await notesServices.editNote(note, id);

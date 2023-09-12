@@ -18,15 +18,17 @@ export default function NotePad({ note, deleteNote }) {
     // }
 
     return (
-        <div className="note-pad">
-            <h4>{note.title}</h4>
-            <p>{note.text}</p>
-            {/* <button onClick={ setEditView(!editView) } >Edit</button> */}
-            {/* <button onClick={ () => editNote(note._id) } >Edit</button> */}
-            <Link to={`/notes/${note._id}/edit`}>Edit</Link>
-            <p>Created: { new Date(note.createdAt).toLocaleString() }</p>
-            {/* <p>Edited: { new Date(note.updatedAt).toLocaleString() }</p> */}
-            <button onClick={ () => deleteNote(note._id) } >&times;</button>
-        </div>
+        <main className="flex-ctr-ctr">
+            <div className="note-pad">
+                <h4>{note.title}</h4>
+                <p>{note.text}</p>
+                <Link to={`/notes/${note._id}/edit`}>Edit</Link>
+                <div className="row">
+                    <p className="smaller" >Created: { new Date(note.createdAt).toLocaleString() }</p>
+                    <p className="smaller" >Edited: { new Date(note.updatedAt).toLocaleString() }</p>
+                </div>
+                <button onClick={ () => deleteNote(note._id) } >&times;</button>
+            </div>
+        </main>
     )
 };
