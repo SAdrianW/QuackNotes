@@ -1,13 +1,14 @@
 /* CSS Custom Properties */
 :root {
-    --white: #FFFFFF;
-    --tan-1: #FBF9F6;
-    --tan-2: #E7E2DD;
-    --tan-3: #E2D9D1;
-    --tan-4: #D3C1AE;
-    --orange: #F67F00;
-    --text-light: #968c84;
-    --text-dark: #615954;
+    --white: rgb(255, 255, 255);
+    --tan-1: rgb(251, 249, 246);
+    --tan-2: rgb(231, 226, 221);
+    --tan-3: rgb(226, 217, 209);
+    --tan-4: rgb(211, 193, 174);
+    --orange: rgb(246, 127, 0);
+    --text-light: rgb(150, 140, 132);
+    --text-dark: rgb(97, 89, 84);
+    --black: rgb(0, 0, 0);
 }
   
 *, *:before, *:after {
@@ -20,16 +21,29 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Almendra', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--tan-4);
-    padding: 2vmin;
+    background-color: rgb(69, 150, 182);
+    /* padding: 2vmin; */
     height: 100vh;
+    background-image: url("https://globe-net.com/wp-content/uploads/2022/05/goulet-isabelle-t4Rp6r649CE-unsplash-scaled.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--black);
+    text-shadow: -1px -1px 0 var(--white), 1px -1px 0 var(--white), -1px 1px 0 var(--white), 1px 1px 0 var(--white);
 }
+
+.stroke-orange {
+    color: var(--black);
+    text-shadow: -1px -1px 0 var(--orange), 1px -1px 0 var(--orange), -1px 1px 0 var(--orange), 1px 1px 0 var(--orange);
+}
+
   
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
   
 #root {
@@ -84,6 +98,7 @@ code {
     background-color: var(--tan-1);
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
+    max-width: 50vmin;
 }
   
 p.error-message {

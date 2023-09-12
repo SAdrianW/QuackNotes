@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { Link } from "react-router-dom";
+import './NotePad.css';
 
 export default function NotePad({ note, deleteNote }) {
     // const [editView, setEditView] = useState(false);

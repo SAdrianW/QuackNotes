@@ -2,6 +2,19 @@
     text-align: center;
 }
 
+.heading {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.para {
+    font-family: 'Almendra', serif;
+}
+
+
+
+
+/* ------ stuff from MERN-Infrastructure ------ */
+/* not sure if keeping */
 .App-logo {
     height: 40vmin;
     pointer-events: none;

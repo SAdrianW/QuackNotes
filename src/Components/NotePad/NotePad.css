@@ -1,0 +1,8 @@
+.note-pad {
+    background-image: url('../../../public/lily-pad.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 5vmin;
+    width: 80vmin;
+}

@@ -1,5 +1,7 @@
 .landing {
-    /* background-image: url("https://random-d.uk/api/random"); */
-    /* background-image: url("https://picsum.photos/200/300"); */
-    min-height: 60vmin;
+    min-height: 100vmin;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
+

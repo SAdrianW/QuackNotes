@@ -1,11 +1,21 @@
+:root {
+    --purple: rgb(190, 30, 255);
+    --blue: rgb(40, 60, 225);
+    --blue-l: rgb(111, 205, 255);
+}
+
 a {
-    color: rgb(190, 30, 255);
+    color: var(--purple);
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    text-shadow: 0 0 2px rgb(40, 60, 225);
+    text-shadow: -1px -1px 4px var(--orange), 1px -1px 4px var(--orange), -1px 1px 4px var(--orange), 1px 1px 4px var(--orange);
+}
+
+.stroke-nav {
+    text-shadow: -1px -1px 0 var(--tan-2), 1px -1px 0 var(--tan-2), -1px 1px 0 var(--tan-2), 1px 1px 0 var(--tan-2);
 }
 
 .navbar {

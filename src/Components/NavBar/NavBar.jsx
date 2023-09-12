@@ -10,11 +10,11 @@ export default function NavBar({ user, setUser }) {
 
     return(
         <nav className="navbar">
-            <Link to="/notes">Quack Pond</Link>
-            <Link to="/notes/new">New Quack</Link>           
+            <Link className="stroke-nav" to="/notes">Quack Pond</Link>
+            <Link className="stroke-nav" to="/notes/new">New Quack</Link>           
             <h1>Greetings {user.name}, Welcome to Quack Notes!</h1>
-            <Link to="/" >Home page</Link>            
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
+            <Link className="stroke-nav" to="/" >Home page</Link>            
+            <Link className="stroke-nav" to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
     )
 };
