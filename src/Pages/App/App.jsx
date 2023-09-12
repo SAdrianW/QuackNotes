@@ -29,6 +29,7 @@ export default function App() {
                         <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} />} />
                         <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} />} />
                         <Route path='/' element={ <LandingPage /> } />
+                        {/* <Route path='/notes/:id' element={ <ShowPage notes={notes} /> } /> */}
                         <Route path='/notes/:id/edit' element={ <EditForm notes={notes} /> } />
                         
                     </Routes>

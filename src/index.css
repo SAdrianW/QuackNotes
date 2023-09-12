@@ -2,13 +2,24 @@
 :root {
     --white: rgb(255, 255, 255);
     --tan-1: rgb(251, 249, 246);
+    --tan-1-a: rgba(251, 249, 246, 0.75);
     --tan-2: rgb(231, 226, 221);
     --tan-3: rgb(226, 217, 209);
     --tan-4: rgb(211, 193, 174);
-    --orange: rgb(246, 127, 0);
+    --orange: rgb(249, 140, 24);
     --text-light: rgb(150, 140, 132);
     --text-dark: rgb(97, 89, 84);
     --black: rgb(0, 0, 0);
+    --purple: rgb(190, 30, 255);
+    --purple-m: rgb(140, 28, 184);
+    --purple-d: rgb(122, 24, 160);
+    --blue: rgb(40, 60, 225);
+    --blue-l: rgb(111, 205, 255);
+    --green-l: rgb(42, 251, 63);
+    --green-m: rgb(59, 197, 49);
+    --green-d: rgb(32, 113, 27);
+    --pink-m: rgb(243, 126, 181);
+    
 }
   
 *, *:before, *:after {
@@ -23,6 +34,7 @@ body {
     sans-serif;
     font-family: 'Fredericka the Great', cursive;
     font-family: 'Almendra', serif;
+    font-size: large;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: rgb(69, 150, 182);
@@ -84,7 +96,7 @@ code {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--tan-1);
+    background-color: var(--tan-1-a);
     color: var(--text-dark);
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
@@ -95,7 +107,7 @@ code {
   
 .form-container {
     padding: 3vmin;
-    background-color: var(--tan-1);
+    background-color: var(--tan-1-a);
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
     max-width: 50vmin;
@@ -114,7 +126,7 @@ form {
 }
   
 label {
-    font-size: 2vmin;
+    font-size: 2.5vmin;
     display: flex;
     align-items: center;
 }
@@ -127,7 +139,13 @@ input {
     color: var(--text-dark);
     background-image: none !important; /* prevent lastpass */
     outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
 }
+
+textarea {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
   
 input:focus {
     border-color: var(--orange);
@@ -136,14 +154,15 @@ input:focus {
 button, a.button {
     margin: 1vmin;
     padding: 1vmin;
-    color: var(--white);
-    background-color: var(--orange);
-    font-size: 2vmin;
+    color: var(--orange);
+    background-color: rgba(0, 0, 0, 0.75);
+    font-size: 3vmin;
     font-weight: bold;
+    font-family: 'Almendra', serif;
     text-decoration: none;
     text-align: center;
-    border: .1vmin solid var(--tan-2);
-    border-radius: .5vmin;
+    border: .4vmin solid var(--green-d);
+    border-radius: .8vmin;
     outline: none;
     cursor: pointer;
 }
@@ -160,7 +179,7 @@ button.btn-xs {
   
 button:disabled, form:invalid button[type="submit"] {
     cursor: not-allowed;
-    background-color: var(--tan-4);
+    background-color: var(--tan-1-a);
 }
   
 button[type="submit"] {

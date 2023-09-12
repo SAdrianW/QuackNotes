@@ -1,21 +1,32 @@
-:root {
+/* :root {
     --purple: rgb(190, 30, 255);
+    --purple-m: rgb(140, 28, 184);
+    --purple-d: rgb(122, 24, 160);
     --blue: rgb(40, 60, 225);
     --blue-l: rgb(111, 205, 255);
-}
+    --green-l: rgb(42, 251, 63);
+    --green-m: rgb(59, 197, 49);
+    --green-d: rgb(32, 113, 27);
+    --pink-m: rgb(243, 126, 181);
+} */
 
 a {
-    color: var(--purple);
+    color: var(--pink-m );
     text-decoration: none;
     font-weight: bold;
+    font-size: calc(5px + 2vmin)
+}
+
+.navbar a {
+    font-size: calc(8px + 2vmin)
 }
 
 a:hover {
-    text-shadow: -1px -1px 4px var(--orange), 1px -1px 4px var(--orange), -1px 1px 4px var(--orange), 1px 1px 4px var(--orange);
+    text-shadow: -1px -1px 4px var(--blue-l), 1px -1px 4px var(--blue-l), -1px 1px 4px var(--blue-l), 1px 1px 4px var(--blue-l);
 }
 
 .stroke-nav {
-    text-shadow: -1px -1px 0 var(--tan-2), 1px -1px 0 var(--tan-2), -1px 1px 0 var(--tan-2), 1px 1px 0 var(--tan-2);
+    text-shadow: -1px -1px 1px var(--green-d), 1px -1px 1px var(--green-d), -1px 1px 1px var(--green-d), 1px 1px 1px var(--green-d);
 }
 
 .navbar {

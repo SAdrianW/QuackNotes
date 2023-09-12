@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
         <nav className="navbar">
             <Link className="stroke-nav" to="/notes">Quack Pond</Link>
             <Link className="stroke-nav" to="/notes/new">New Quack</Link>           
-            <h1>Greetings {user.name}, Welcome to Quack Notes!</h1>
+            <h1 className="heading">Greetings {user.name}, Welcome to Quack Notes!</h1>
             <Link className="stroke-nav" to="/" >Home page</Link>            
             <Link className="stroke-nav" to="" onClick={handleLogOut}>Log Out</Link>
         </nav>

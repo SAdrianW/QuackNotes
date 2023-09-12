@@ -4,14 +4,21 @@
 
 .heading {
     font-family: 'Fredericka the Great', cursive;
+    font-size: calc(14px + 2vmin)
+
 }
 
 .para {
     font-family: 'Almendra', serif;
 }
 
+form {
+    color: black;
+}
 
-
+.position {
+    position: static;
+}
 
 /* ------ stuff from MERN-Infrastructure ------ */
 /* not sure if keeping */

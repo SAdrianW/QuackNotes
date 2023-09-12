@@ -2,6 +2,9 @@
 import { Link } from "react-router-dom";
 import './NotePad.css';
 
+// TODO: move edit/ delete to show view
+// TODO: truncate text, full view on show
+
 export default function NotePad({ note, deleteNote }) {
     // const [editView, setEditView] = useState(false);
 

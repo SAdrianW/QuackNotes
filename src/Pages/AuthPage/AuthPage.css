@@ -1,0 +1,10 @@
+.auth-page {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 2vmin;
+}
+
+.padding {
+    padding: 2vmin;
+}

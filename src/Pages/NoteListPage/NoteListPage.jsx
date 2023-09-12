@@ -13,7 +13,7 @@ export default function NoteListPage({ notes, setNotes }) {
         setNotes(updatedNotes);
     }
 
-
+    // TODO: new component, NoteListItem
 
     if (notes.length === 0) {
         return <h3>No Quacks in this pond. Go make some Quacks!</h3>
@@ -27,7 +27,7 @@ export default function NoteListPage({ notes, setNotes }) {
 
     return (
         <main>
-            <h1>NoteListPage</h1>
+            <h1 className='heading' >NoteListPage</h1>
             <div className='note-list' >
                 { notesList }
             </div>
