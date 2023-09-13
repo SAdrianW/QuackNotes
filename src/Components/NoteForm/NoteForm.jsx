@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NoteForm({ addNote }) {
     const [newNote, setNewNote] = useState({
@@ -6,8 +7,8 @@ export default function NoteForm({ addNote }) {
         text:''
     });
     // console.log(newNote)
-    // not sure about user attachment. TODO: figure it out later, after note is displayed
-    
+    const navigate = useNavigate();
+
     function _handleChange(evt) {
         setNewNote({...newNote, [evt.target.name]: evt.target.value });
     }
@@ -19,6 +20,8 @@ export default function NoteForm({ addNote }) {
             title: '',
             text:''
         });
+        console.log(newNote)
+        navigate("/notes")
     }
 
     return (

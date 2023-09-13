@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 import * as notesServices from '../../Utilities/notes-service';
 
@@ -23,15 +23,16 @@ export default function EditForm({ notes }) {
         setEditedNote({...editedNote, [evt.target.name]: evt.target.value });
     }
 
-    const _handleSubmit = (evt) => {
+    const _handleSubmit = async (evt) => {
         evt.preventDefault();
-        editNote(editedNote);
+        await editNote(editedNote);
         // setEditedNote({
         //     title: '',
         //     text:''
         // });
         console.log(editedNote);
-        navigate("/notes");
+        navigate(`/notes/${note._id}`);
+        // navigate(`/notes`);
     }
 
     return (
@@ -60,6 +61,9 @@ export default function EditForm({ notes }) {
                 </div>
                 <button>Keep this Quack!</button>
             </form>
+            <Link to={`/notes/${note._id}`}>Cancel Edit</Link>
+            {/* <Link to="/notes">Cancel Edit</Link> */}
+
         </>
     )
 };

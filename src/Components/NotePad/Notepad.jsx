@@ -22,10 +22,13 @@ export default function NotePad({ note, deleteNote }) {
             <div className="note-pad">
                 <h4>{note.title}</h4>
                 <p>{note.text}</p>
-                <Link to={`/notes/${note._id}/edit`}>Edit</Link>
                 <div className="row">
-                    <p className="smaller" >Created: { new Date(note.createdAt).toLocaleString() }</p>
-                    <p className="smaller" >Edited: { new Date(note.updatedAt).toLocaleString() }</p>
+                    <Link className="link-box" to="/notes" >Back to the pond</Link>
+                    <Link className="link-box" to={`/notes/${note._id}/edit`} >Edit</Link>
+                </div>
+                <div className="row">
+                    <p className="smaller " >Created: { new Date(note.createdAt).toLocaleString() }</p>
+                    <p className="smaller " >Edited: { new Date(note.updatedAt).toLocaleString() }</p>
                 </div>
                 <button onClick={ () => deleteNote(note._id) } >&times;</button>
             </div>

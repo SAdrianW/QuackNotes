@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import { signUp } from "../../Utilities/users-service"
 
 export default class SignUpForm extends Component {
@@ -9,6 +10,7 @@ export default class SignUpForm extends Component {
         confirm: '',
         error: '',
     };
+
 
     handleChange = (evt) => {
         this.setState({
@@ -31,6 +33,8 @@ export default class SignUpForm extends Component {
             // an error occurred, duplicate email probably
             this.setState({ error: 'Sign Up Failed - Try Again' })
         }
+        const navigate = useNavigate();
+        navigate('/')
     };
 
     render() {

@@ -15,6 +15,11 @@ export async function deleteNote(id) {
 }
 
 export async function editNote(note) {
-    console.log(note);
+    // console.log(note);
     return sendRequest(`${ BASE_URL }/${ note._id }`, 'PUT', note);
+}
+
+export async function showNote(id) {
+    // console.log(id);
+    return sendRequest(`${ BASE_URL }/${ id }`);
 }

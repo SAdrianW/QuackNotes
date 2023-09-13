@@ -4,7 +4,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     padding: 12vmin;
-    width: 80vmin;
+    width: 60vmin;
+    margin: 2vmin;
 }
 
 .note-pad {
@@ -12,11 +13,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 12vmin;
+    padding: 20vmin;
     width: 160vmin;
 }
 
 .row {
     display: flex;
     justify-content: space-evenly;
+    
+}
+
+.row-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.link-box {
+    width: 24vmin;
 }

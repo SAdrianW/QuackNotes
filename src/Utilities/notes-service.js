@@ -18,7 +18,14 @@ export async function deleteNote(id) {
 }
 
 export async function editNote(id) {
-    console.log(id);
+    // console.log(id);
     await notesAPI.editNote(id);
     return id;
+}
+
+export async function showNote(id) {
+    // console.log(id)
+    const note = await notesAPI.showNote(id);
+    // console.log(note)
+    return note;
 }

@@ -6,11 +6,11 @@ import * as notesServices from "../../Utilities/notes-service";
 
 import NotePad from "../../Components/NotePad/Notepad";
 
-export default function({ notes }) {
+export default function ShowPage({ notes }) {
     let { id } = useParams();
-    const note = notes.find((n) => id === n._id);
+    // const note = notes.find((n) => id === n._id);
 
-    // const [singleNote, setSingleNote] = useState(null);
+    const [singleNote, setSingleNote] = useState({});
     // const navigate = useNavigate();
 
     // async function showNote(id) {
@@ -18,16 +18,20 @@ export default function({ notes }) {
     //     setSingleNote(note);
     // };
 
+    useEffect(() => {      
+            notesServices.showNote(id).then((note) => { 
+                setSingleNote(note)
+                // console.log(note)
+            } );
+            // setSingleNote(note);
+            // console.log(singleNote)      
+    }, [])
 
-    // useEffect(() => {
-    //     async function showNote() {
-    //         const note = await notesServices.showNote
-    //     }
-    // }, [])
+
 
     return (
         <div>
-            <NotePad note={note} />
+            <NotePad note={singleNote} />
         </div>
     )
 }

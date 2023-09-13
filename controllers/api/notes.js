@@ -5,7 +5,7 @@ module.exports = {
     index,
     delete: deleteNote,
     edit,
-    // show
+    show
 }
 
 async function create(req, res) {
@@ -44,12 +44,25 @@ async function deleteNote(req, res) {
 }
 
 async function edit(req, res) {
-    console.log(req.params.id + req.body)
+    console.log(req.params.id , req.body)
     try {
         let note = await Note.findByIdAndUpdate(req.params.id, req.body);
-        note.save();
+        // note.save();
+        res.json(note);
     } catch (err) {
         console.log('Edit error');
+        res.status(400).json(err);
+    }
+}
+
+async function show(req, res) {
+    try {
+        // console.log(req.params.id)
+        const note = await Note.findById(req.params.id);
+        // console.log(note)
+        res.json(note);
+    } catch (err) {
+        console.log('show error');
         res.status(400).json(err);
     }
 }

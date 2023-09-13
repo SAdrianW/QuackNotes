@@ -26,7 +26,7 @@ export default function NoteListPage({ notes, setNotes }) {
     ) )
 
     return (
-        <main>
+        <main className='note-list-page'>
             <h1 className='heading' >NoteListPage</h1>
             <div className='note-list' >
                 { notesList }
