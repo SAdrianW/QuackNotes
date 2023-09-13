@@ -13,6 +13,7 @@ async function create(req, res) {
         const note = await Note.create({
             title: req.body.title,
             text: req.body.text,
+            image: req.body.image,
             user: req.user._id
         });
         res.json(note);
@@ -44,10 +45,9 @@ async function deleteNote(req, res) {
 }
 
 async function edit(req, res) {
-    console.log(req.params.id , req.body)
+    // console.log(req.params.id , req.body)
     try {
         let note = await Note.findByIdAndUpdate(req.params.id, req.body);
-        // note.save();
         res.json(note);
     } catch (err) {
         console.log('Edit error');

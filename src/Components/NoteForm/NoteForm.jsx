@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NoteForm({ addNote }) {
+export default function NoteForm({ addNote, uploadImage, image, setImage }) {
     const [newNote, setNewNote] = useState({
         title: '',
         text:''
@@ -13,20 +13,23 @@ export default function NoteForm({ addNote }) {
         setNewNote({...newNote, [evt.target.name]: evt.target.value });
     }
 
-    const _handleSubmit = (evt) => {
+    async function _handleSubmit(evt) {
         evt.preventDefault();
+        // const data = await uploadImage();
+        // newNote.image = data.url;
+        //     console.log(data)
         addNote(newNote);
         setNewNote({
             title: '',
             text:''
         });
-        console.log(newNote)
+            console.log(newNote)
         navigate("/notes")
     }
 
     return (
         <>
-            <h3>NewQuackForm</h3>
+            <h3>New Quack Form</h3>
             <form className="flex-ctr-ctr flex-col" onSubmit={ _handleSubmit }>
                 <div>
                     <label className="flex-ctr-ctr" >Quack Title</label>
@@ -48,6 +51,7 @@ export default function NoteForm({ addNote }) {
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
+                {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
                 <button>Keep this Quack!</button>
             </form>
         </>

@@ -16,8 +16,26 @@ import './App.css';
 export default function App() {
     const [user, setUser] = useState(getUser());
     const [notes, setNotes] = useState([]);
-    // TODO: migrate notes state to NotePage
 
+    const [image, setImage] = useState('');
+    // const [url, setUrl] = useState(''); // not being used? in CJ's ver
+
+    const uploadImage = () => {
+        const data = new FormData()
+        data.append("file", image)
+        data.append("upload_preset", "react-uploads")
+        data.append("cloud_name", "kazrion")
+        fetch(" https://api.cloudinary.com/v1_1/kazrion/image/upload ",{
+            method:"post",
+            body: data
+        })
+        .then(res => res.json())
+        // .then(data => {
+        //     setUrl(data.url)
+        // }) // not being used? in CJ's ver
+        // console.log(url)
+        .catch(err => console.log(err))
+    }
     
     return (
         <main className="App">
@@ -27,11 +45,11 @@ export default function App() {
                     
                     <Routes>
                         {/* Route components go in here */}
-                        <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} />} />
+                        <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} uploadImage={uploadImage} image={image} setImage={setImage} />} />
                         <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} />} />
                         <Route path='/' element={ <LandingPage /> } />
                         <Route path='/notes/:id' element={ <ShowPage notes={notes} /> } />
-                        <Route path='/notes/:id/edit' element={ <EditForm notes={notes} /> } />
+                        <Route path='/notes/:id/edit' element={ <EditForm notes={notes} uploadImage={uploadImage} image={image} setImage={setImage} /> } />
                         
                     </Routes>
                 </> 

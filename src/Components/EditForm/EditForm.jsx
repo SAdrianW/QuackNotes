@@ -3,12 +3,10 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 
 import * as notesServices from '../../Utilities/notes-service';
 
-export default function EditForm({ notes }) {
+export default function EditForm({ notes, uploadImage, image, setImage }) {
     let { id } = useParams();
     const note = notes.find((n) => id === n._id);
 
-    // console.log(id);
-    // console.log(note);
 
     const [editedNote, setEditedNote] = useState( note );
     const navigate = useNavigate();
@@ -25,12 +23,14 @@ export default function EditForm({ notes }) {
 
     const _handleSubmit = async (evt) => {
         evt.preventDefault();
+        // const data = await uploadImage();
+        // editedNote.image = data.url;
         await editNote(editedNote);
         // setEditedNote({
         //     title: '',
         //     text:''
         // });
-        console.log(editedNote);
+        // console.log(editedNote);
         navigate(`/notes/${note._id}`);
         // navigate(`/notes`);
     }
@@ -59,8 +59,17 @@ export default function EditForm({ notes }) {
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
+                {/* <button value={editedNote.url} onClick={_handleChange}>Keep this image in this Quack</button> */}
+                {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
                 <button>Keep this Quack!</button>
             </form>
+                {/* <div className="image-form">
+                    <input type="file" onChange= {(e)=> setImage(e.target.files[0])}></input>
+                    <button onClick={uploadImage} value={url}>Upload</button>
+                </div>
+                <div>
+                    <img src={url} alt='' />
+                </div> */}
             <Link to={`/notes/${note._id}`}>Cancel Edit</Link>
             {/* <Link to="/notes">Cancel Edit</Link> */}
 
