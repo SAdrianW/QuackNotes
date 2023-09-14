@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NoteForm({ addNote, uploadImage, image, setImage }) {
+export default function NoteForm({ addNote, uploadImage, image, setImage, start2 }) {
     const [newNote, setNewNote] = useState({
         title: '',
-        text:''
+        text: '',
+        image: '' 
     });
     // console.log(newNote)
     const navigate = useNavigate();
@@ -15,13 +16,15 @@ export default function NoteForm({ addNote, uploadImage, image, setImage }) {
 
     async function _handleSubmit(evt) {
         evt.preventDefault();
+        start2();
         // const data = await uploadImage();
         // newNote.image = data.url;
         //     console.log(data)
         addNote(newNote);
         setNewNote({
             title: '',
-            text:''
+            text: '',
+            image: ''
         });
             console.log(newNote)
         navigate("/notes")

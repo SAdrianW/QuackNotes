@@ -6,7 +6,7 @@ import NotePadSmall from "../../Components/NotePadSmall/NotepadSmall"
 
 import "./NoteListPage.css";
 
-export default function NoteListPage({ notes, setNotes }) {
+export default function NoteListPage({ notes, setNotes, start1 }) {
     async function deleteNote(id) {
         await notesServices.deleteNote(id);
         const updatedNotes = notes.filter((n) => n._id !== id);
@@ -21,7 +21,7 @@ export default function NoteListPage({ notes, setNotes }) {
 
     const notesList = notes.map((n) => (
         <div  key={n._id}>
-            <NotePadSmall note={n} deleteNote={deleteNote} />
+            <NotePadSmall note={n} deleteNote={deleteNote} start1={start1} />
         </div>
     ) )
 

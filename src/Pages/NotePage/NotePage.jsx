@@ -5,7 +5,7 @@ import * as notesServices from "../../Utilities/notes-service";
 // import NewNotePage from "../NewNotePage/NewNotePage";
 import NoteListPage from "../NoteListPage/NoteListPage";
 
-export default function NotePage({ notes, setNotes }) {
+export default function NotePage({ notes, setNotes, start1 }) {
     
     useEffect(() => {
         // notesServices.getNotes().then((notes) => {
@@ -22,7 +22,7 @@ export default function NotePage({ notes, setNotes }) {
 
     return (
         <>
-            <NoteListPage notes={notes} setNotes={setNotes} />
+            <NoteListPage notes={notes} setNotes={setNotes} start1={start1} />
         </>
     )
 }

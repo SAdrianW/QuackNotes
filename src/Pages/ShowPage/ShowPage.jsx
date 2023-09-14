@@ -6,7 +6,7 @@ import * as notesServices from "../../Utilities/notes-service";
 
 import NotePad from "../../Components/NotePad/Notepad";
 
-export default function ShowPage({ notes }) {
+export default function ShowPage({ notes, start2, start3 }) {
     let { id } = useParams();
     // const note = notes.find((n) => id === n._id);
 
@@ -31,7 +31,7 @@ export default function ShowPage({ notes }) {
 
     return (
         <div>
-            <NotePad note={singleNote} />
+            <NotePad note={singleNote} start2={start2} start3={start3} />
         </div>
     )
 }

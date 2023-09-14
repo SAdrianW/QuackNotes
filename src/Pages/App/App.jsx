@@ -23,7 +23,7 @@ export default function App() {
     const [notes, setNotes] = useState([]);
 
     // const [image, setImage] = useState('');
-    // // const [url, setUrl] = useState(''); // not being used? in CJ's ver
+    // const [url, setUrl] = useState(''); // not being used? in CJ's ver
 
     // const uploadImage = () => {
     //     const data = new FormData()
@@ -43,23 +43,25 @@ export default function App() {
     // }
     
     // const quack1 = new Audio()
-    const [start1] = useSound(quack3);
+    const [start1] = useSound(quack1, { volume: 0.5 });
+    const [start2] = useSound(quack2, { volume: 0.5 });
+    const [start3] = useSound(quack3, { volume: 0.5 });
 
     return (
         <main className="App">
             { user ?
                 <>
-                    <NavBar user={user} setUser={setUser} />
+                    <NavBar user={user} setUser={setUser} start1={start1} start2={start2} start3={start3} />
                     
                     <Routes>
                         {/* Route components go in here */}
-                        <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} 
+                        <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} start2={start2} 
                             // uploadImage={uploadImage} image={image} setImage={setImage} 
                             />} />
-                        <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} />} />
+                        <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} start1={start1} />} />
                         <Route path='/' element={ <LandingPage start1={start1} /> } />
-                        <Route path='/notes/:id' element={ <ShowPage notes={notes} /> } />
-                        <Route path='/notes/:id/edit' element={ <EditForm notes={notes} 
+                        <Route path='/notes/:id' element={ <ShowPage notes={notes} start2={start2} start3={start3} /> } />
+                        <Route path='/notes/:id/edit' element={ <EditForm notes={notes} start3={start3}
                             // uploadImage={uploadImage} image={image} setImage={setImage} 
                             /> } />
                         

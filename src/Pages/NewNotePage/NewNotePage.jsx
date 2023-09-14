@@ -3,7 +3,7 @@ import * as notesServices from '../../Utilities/notes-service';
 
 import NoteForm from '../../Components/NoteForm/NoteForm';
 
-export default function NewNotePage({ notes, setNotes, uploadImage, image, setImage }) {
+export default function NewNotePage({ notes, setNotes, uploadImage, image, setImage, start2 }) {
     
     async function addNote(note) {
         const newNote = await notesServices.createNote(note);
@@ -13,7 +13,7 @@ export default function NewNotePage({ notes, setNotes, uploadImage, image, setIm
     return (
         <main>
             <h1>NewNotePage</h1>
-            <NoteForm addNote={addNote} uploadImage={uploadImage} image={image} setImage={setImage} />
+            <NoteForm addNote={addNote} uploadImage={uploadImage} image={image} setImage={setImage} start2={start2} />
         </main>
     )
 };
