@@ -4,7 +4,7 @@ import "./LandingPage.css";
 
 const fetch = require('node-fetch');
 
-export default function LandingPage() {
+export default function LandingPage({ start1 }) {
     const [image, setImage] = useState(null);
 
     useEffect(() => {
@@ -25,7 +25,10 @@ export default function LandingPage() {
             style={{ backgroundImage: `url(${image})` }}
             >
             </div> */}
-            <img className="landing" src={image} alt="It's a Duck" />
+            <div className="flex-ctr-ctr flex-col">
+                <img className="landing" src={image} alt="It's a Duck" />
+                <button onClick={start1}>QUACK!</button>
+            </div>
 
         </div>
     )
