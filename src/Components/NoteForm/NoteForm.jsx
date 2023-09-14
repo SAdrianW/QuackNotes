@@ -7,7 +7,7 @@ export default function NoteForm({ addNote, uploadImage, image, setImage, start2
         text: '',
         image: '' 
     });
-    // console.log(newNote)
+    console.log(newNote)
     const navigate = useNavigate();
 
     function _handleChange(evt) {
@@ -17,9 +17,9 @@ export default function NoteForm({ addNote, uploadImage, image, setImage, start2
     async function _handleSubmit(evt) {
         evt.preventDefault();
         start2();
-        // const data = await uploadImage();
-        // newNote.image = data.url;
-        //     console.log(data)
+        const data = await uploadImage(); //cloudinary
+        console.log(data)
+        newNote.image = data.url;
         addNote(newNote);
         setNewNote({
             title: '',
@@ -54,7 +54,7 @@ export default function NoteForm({ addNote, uploadImage, image, setImage, start2
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
-                {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
+                <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                 <button>Keep this Quack!</button>
             </form>
         </>

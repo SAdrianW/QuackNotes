@@ -24,7 +24,7 @@ export default function EditForm({ notes, uploadImage, image, setImage, start3 }
     const _handleSubmit = async (evt) => {
         evt.preventDefault();
         start3()
-        // const data = await uploadImage();
+        // const data = await uploadImage(); // cloudinary
         // editedNote.image = data.url;
         await editNote(editedNote);
         setEditedNote({
@@ -33,7 +33,6 @@ export default function EditForm({ notes, uploadImage, image, setImage, start3 }
         });
         console.log(editedNote);
         navigate(`/notes/${note._id}`);
-        // navigate(`/notes`);
     }
 
     return (
@@ -60,20 +59,10 @@ export default function EditForm({ notes, uploadImage, image, setImage, start3 }
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
-                {/* <button value={editedNote.url} onClick={_handleChange}>Keep this image in this Quack</button> // my old ver */} 
                 {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
                 <button>Keep this Quack!</button>
             </form>
-                {/* <div className="image-form"> // my old ver
-                    <input type="file" onChange= {(e)=> setImage(e.target.files[0])}></input>
-                    <button onClick={uploadImage} value={url}>Upload</button>
-                </div>
-                <div>
-                    <img src={url} alt='' />
-                </div> */}
             <Link to={`/notes/${note._id}`}>Cancel Edit</Link>
-            {/* <Link to="/notes">Cancel Edit</Link> */}
-
         </>
     )
 };

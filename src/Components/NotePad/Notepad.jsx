@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 import './NotePad.css';
 
@@ -14,7 +13,7 @@ export default function NotePad({ note, deleteNote, start2, start3 }) {
                     <Link className="link-box" to="/notes" onClick={start2} >Back to the pond</Link>
                     <Link className="link-box" to={`/notes/${note._id}/edit`} onClick={start3} >Edit</Link>
                 </div>
-
+                <img src={note.image} alt="img" />
                 <div className="row">
                     <p className="smaller " >Created: { new Date(note.createdAt).toLocaleString() }</p>
                     <p className="smaller " >Edited: { new Date(note.updatedAt).toLocaleString() }</p>

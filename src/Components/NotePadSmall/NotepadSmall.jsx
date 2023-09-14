@@ -1,8 +1,4 @@
-// import { useState } from "react";
 import { Link } from "react-router-dom";
-
-// TODO: move edit/ delete to show view
-// TODO: truncate text, full view on show
 
 export default function NotePadSmall({ note, deleteNote, start1 }) {
 

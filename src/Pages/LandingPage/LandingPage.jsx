@@ -20,11 +20,6 @@ export default function LandingPage({ start1 }) {
         <div>
             <h2 className="stroke-orange heading">Like Quick Notes... but they Quack!</h2>
             <h3 className="stroke-orange para">Welcome to the Landing Pond of Quack Notes!</h3>
-            {/* <div 
-            className="landing"
-            style={{ backgroundImage: `url(${image})` }}
-            >
-            </div> */}
             <div className="flex-ctr-ctr flex-col">
                 <img className="landing" src={image} alt="It's a Duck" />
                 <button onClick={start1}>QUACK!</button>

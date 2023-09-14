@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 
 import * as notesServices from '../../Utilities/notes-service';
 
@@ -13,7 +12,6 @@ export default function NoteListPage({ notes, setNotes, start1 }) {
         setNotes(updatedNotes);
     }
 
-    // TODO: new component, NoteListItem
 
     if (notes.length === 0) {
         return <h3>No Quacks in this pond. Go make some Quacks!</h3>
