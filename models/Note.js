@@ -9,7 +9,7 @@ const noteSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
+        // required: true
     },
     user: {
         type: Schema.Types.ObjectId,

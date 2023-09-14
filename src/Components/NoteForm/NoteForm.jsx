@@ -1,32 +1,49 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as notesServices from "../../Utilities/notes-service";
 
-export default function NoteForm({ addNote, uploadImage, setImage, start2 }) {
+export default function NoteForm({ addNote, start2 }) {
     const [newNote, setNewNote] = useState({
         title: '',
         text: '',
         image: '' 
     });
+    const [image, setImage] = useState('');
     const navigate = useNavigate();
 
-    // console.log(newNote) // logs out lines 6-8 as expected
+    const uploadImage = (image) => {
+        const data = new FormData()
+        data.append("file", image)
+        data.append("upload_preset", "react-uploads")
+        data.append("cloud_name", "kazrion")
+        return fetch(" https://api.cloudinary.com/v1_1/kazrion/image/upload ",{
+            method:"post",
+            body: data
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+    }
 
     function _handleChange(evt) {
         setNewNote({...newNote, [evt.target.name]: evt.target.value });
     }
 
-    async function _handleSubmit(evt) {
+    const _handleImageChange = (e) => {
+        setImage(e.target.files[0])
+    }
+
+    const _handleSubmit = async (evt) => {
         evt.preventDefault();
         start2();
-        const data = await uploadImage(); //cloudinary
-        console.log(data)
-        newNote.image = data.url;
+        try {
+            await uploadImage(image).then((data) => {
+                newNote.image = data.url;
+            });
+            setImage('');
+        } catch (err) {
+            console.log(err);
+        }
         addNote(newNote);
-        setNewNote({
-            title: '',
-            text: '',
-            image: ''
-        });
         console.log(newNote)
         navigate("/notes")
     }
@@ -55,7 +72,7 @@ export default function NoteForm({ addNote, uploadImage, setImage, start2 }) {
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
-                <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+                <input type="file" onChange={_handleImageChange} />
                 <button>Keep this Quack!</button>
             </form>
         </>
