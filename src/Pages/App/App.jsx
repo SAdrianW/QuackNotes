@@ -21,7 +21,6 @@ export default function App() {
     const [notes, setNotes] = useState([]);
 
     const [image, setImage] = useState('');
-    // const [url, setUrl] = useState(''); // not being used? in CJ's ver
 
     const uploadImage = () => {
         const data = new FormData()
@@ -33,10 +32,6 @@ export default function App() {
             body: data
         })
         .then(res => res.json())
-        // .then(data => {
-        //     setUrl(data.url)
-        // }) // not being used? in CJ's ver
-        // console.log(url)
         .catch(err => console.log(err))
     }
     
@@ -57,7 +52,7 @@ export default function App() {
                             />} />
                         <Route path="/notes" element={<NotePage notes={notes} setNotes={setNotes} user={user} start1={start1} />} />
                         <Route path='/' element={ <LandingPage start1={start1} /> } />
-                        <Route path='/notes/:id' element={ <ShowPage notes={notes} start2={start2} start3={start3} /> } />
+                        <Route path='/notes/:id' element={ <ShowPage notes={notes} setNotes={setNotes} start2={start2} start3={start3} /> } />
                         <Route path='/notes/:id/edit' element={ <EditForm notes={notes} start3={start3}
                             uploadImage={uploadImage} image={image} setImage={setImage} 
                             /> } />

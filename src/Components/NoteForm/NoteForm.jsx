@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NoteForm({ addNote, uploadImage, image, setImage, start2 }) {
+export default function NoteForm({ addNote, uploadImage, setImage, start2 }) {
     const [newNote, setNewNote] = useState({
         title: '',
         text: '',
         image: '' 
     });
-    console.log(newNote)
     const navigate = useNavigate();
+
+    // console.log(newNote) // logs out lines 6-8 as expected
 
     function _handleChange(evt) {
         setNewNote({...newNote, [evt.target.name]: evt.target.value });
@@ -26,7 +27,7 @@ export default function NoteForm({ addNote, uploadImage, image, setImage, start2
             text: '',
             image: ''
         });
-            console.log(newNote)
+        console.log(newNote)
         navigate("/notes")
     }
 

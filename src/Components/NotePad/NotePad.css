@@ -20,14 +20,28 @@
 .row {
     display: flex;
     justify-content: space-evenly;
-    
+    margin: 4vmin;
 }
 
-.row-2 {
-    display: flex;
-    justify-content: space-around;
-}
 
 .link-box {
-    width: 24vmin;
+    width: 28vmin;
+    border-radius: 50% / 50%;
+    border: none;
+    box-shadow: 0 0 3px 3px rgb(32 113 27 / 50%);
+    background-color: rgb(32 113 27 / 50%);
+}
+
+.note-img {
+    box-shadow: 0 0 5px 5px var(--green-d);
+    border-radius: 3vmin;
+    max-height: 120vmin;
+    margin-top: 5vmin;
+}
+
+.text-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 3px 3px rgb(255 255 255 / 50%);
+    border-radius: 10% / 30%;
+    padding: 1vmin;
 }

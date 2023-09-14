@@ -14,7 +14,7 @@ export default function NoteListPage({ notes, setNotes, start1 }) {
 
 
     if (notes.length === 0) {
-        return <h3>No Quacks in this pond. Go make some Quacks!</h3>
+        return <h3 className='heading stroke-orange'>No Quacks in this pond. Go make some Quacks!</h3>
     }
 
     const notesList = notes.map((n) => (
@@ -25,7 +25,7 @@ export default function NoteListPage({ notes, setNotes, start1 }) {
 
     return (
         <main className='note-list-page'>
-            <h1 className='heading' >NoteListPage</h1>
+            <h1 className='heading' >All Quack Notes in a Pond</h1>
             <div className='note-list' >
                 { notesList }
             </div>

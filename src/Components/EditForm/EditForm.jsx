@@ -24,8 +24,8 @@ export default function EditForm({ notes, uploadImage, image, setImage, start3 }
     const _handleSubmit = async (evt) => {
         evt.preventDefault();
         start3()
-        // const data = await uploadImage(); // cloudinary
-        // editedNote.image = data.url;
+        const data = await uploadImage(); // cloudinary
+        editedNote.image = data.url;
         await editNote(editedNote);
         setEditedNote({
             title: '',
@@ -59,7 +59,7 @@ export default function EditForm({ notes, uploadImage, image, setImage, start3 }
                         onChange={ _handleChange }
                     ></textarea>
                 </div>
-                {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
+                <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                 <button>Keep this Quack!</button>
             </form>
             <Link to={`/notes/${note._id}`}>Cancel Edit</Link>

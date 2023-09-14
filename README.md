@@ -1,4 +1,7 @@
-# MERN_Stack Infrastructure
+# QUACK NOTES
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
-Don't forget to run npm build
+# ***QUACK!***
+
+Well, now that's out of the way, on to the details.
+
+#### Quack Notes

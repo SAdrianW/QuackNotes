@@ -4,5 +4,6 @@
     background-position: center;
     background-size: contain;
     box-shadow: 0 0 5px 5px var(--green-d);
+    border-radius: 3vmin;
 }
 
