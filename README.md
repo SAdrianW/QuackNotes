@@ -56,9 +56,9 @@ The other planning tool that I used, not as much as I could have, was a wirefram
 
 ### Future Plans
 
-Quack Notes relies on a database connection and hosting such a site was beyond the scope of the time that was allocated to this initial release. Heroku is the site that is sugested by the staff at GA and I see no reason not to trust them, they have steered us right every time.
+Hosting: Quack Notes relies on a database connection and hosting such a site was beyond the scope of the time that was allocated to this initial release. Heroku is the site that is sugested by the staff at GA and I see no reason not to trust them, they have steered us right every time.
 
-Amongst the notes in the pond I had planned to have a drop down sort menu. Within this menu would be options/ function for different paramaters of sorting the notes: 
+Sort: Amongst the notes in the pond I had planned to have a drop down sort menu. Within this menu would be options/ function for different paramaters of sorting the notes: 
 
 - Name of title
 - Date created
@@ -68,10 +68,11 @@ Amongst the notes in the pond I had planned to have a drop down sort menu. Withi
 
 All of these function would have simply sorted in an ascending or desending manner based on the selected parameter.
 
-A seemigly simple feature that eluded me until it was too late to deal with was a confirmation pop-up or message for deleting a note. 
+Confirm: A seemigly simple feature that eluded me until it was too late to deal with was a confirmation pop-up or message for deleting a note. 
 
-Something that was supposed to be a part of practicing my pure CSS was making sure the site was properly responsive to mobile design and screen sizes. I think one of the things that I failed to realise earlier on was that just using reactive units, I think that's what they are called, like vmin or rem is not enough to make a website properly responsive. Next time I will aim to address this earlier in the design process, by adhering to mobile-first design philosophies.
+Responsive: Something that was supposed to be a part of practicing my pure CSS was making sure the site was properly responsive to mobile design and screen sizes. I think one of the things that I failed to realise earlier on was that just using reactive units, I think that's what they are called, like vmin or rem is not enough to make a website properly responsive. Next time I will aim to address this earlier in the design process, by adhering to mobile-first design philosophies.
 
+Search: Within either the same menu or similar on to the sort function would be a search bar to find a certain word and have all notes with that word dispay on the page.
 
 #### And to end on a high note...
 
